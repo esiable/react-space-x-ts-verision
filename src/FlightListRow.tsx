@@ -6,9 +6,9 @@ type Props = {
 
 export default function LaunchRow({ launch }: Props) {
   return (
-    <tr key={launch.id}>
+    <tr key={launch.flight_id}>
       <td>
-        <strong>{launch.id}</strong>
+        <strong>{launch.flight_id}</strong>
       </td>
       <td>{launch.launch_date_local}</td>
       <td>{launch.launch_site.site_name_long}</td>
