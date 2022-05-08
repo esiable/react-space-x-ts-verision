@@ -1,11 +1,20 @@
 import React from 'react';
 import FlightListPage from "./FlightListPage";
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import FlightDetailsPage from './FlightDetailsPage';
 
 function App() {
   return (
     <>
-      <h1>SpaceX App</h1>
-      <FlightListPage />
+      <BrowserRouter>
+        <Link to='/'>
+          <h1>Space X App</h1>
+        </Link>
+        <Routes>
+          <Route path='/' element={<FlightListPage />} />
+          <Route path='/details/:id' element={<FlightDetailsPage />} />
+        </Routes>
+      </BrowserRouter>
       </>
   );
 }

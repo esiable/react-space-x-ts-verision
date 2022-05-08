@@ -4,7 +4,7 @@ import LaunchRow from './FlightListRow'
 import './FlightList.css';
 
 
-const FLIGHT_LIST_TABLE_HEADERS = ['id', 'date', 'site name', 'mission', 'rocket', 'ship', 'port', 'image'];
+const FLIGHT_LIST_TABLE_HEADERS = ['id', 'date', 'site name', 'mission', 'rocket', 'ships', 'port', 'image', ''];
 
 type Props = {
     launches: Launch[];

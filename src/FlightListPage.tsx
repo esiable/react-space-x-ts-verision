@@ -7,6 +7,7 @@ import FlightListFilters from "./FlightListFilters";
 export default function FlightListPage() {
     const {get, loading, data} = useFetch('https://api.spacexdata.com/v3/launches');
     const [launchData, setLaunchData] = useState();
+
     // Local cache, we dont need overwrite launchData
     //  every time when filter data.
     // Maybe there is other way, @todo
@@ -29,7 +30,6 @@ export default function FlightListPage() {
 
     return (
         <>
-            <h2>Launch list</h2>
             <FlightListFilters setLaunchData={setLaunchData} localCache={localCache}/>
             <FlightList launches={launchData}/>
         </>

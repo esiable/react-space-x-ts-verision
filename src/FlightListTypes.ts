@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction} from 'react';
+
 export type Ship = 
   {
     name: string;
@@ -6,7 +8,7 @@ export type Ship =
   }
 
   export type Launch = {
-  flight_id: string;
+  flight_number: string;
   launch_date_local: string;
   launch_site: {
     site_name_long: string;
@@ -17,3 +19,8 @@ export type Ship =
   }
   ships: Ship[];
 };
+
+export type LaunchData = {
+  setLaunchData: Dispatch<SetStateAction<object>>
+  localCache: []
+}

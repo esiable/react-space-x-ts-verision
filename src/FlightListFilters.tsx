@@ -1,10 +1,9 @@
-import { Dispatch, SetStateAction, useState, useEffect } from 'react';
-
-import { Launch } from "./FlightListTypes";
+import { useState, useEffect } from 'react';
+import { Launch, LaunchData } from "./FlightListTypes";
 
 type Props = {
-  setLaunchData: Dispatch<SetStateAction<any>>,
-  localCache: any
+  setLaunchData: LaunchData['setLaunchData'],
+  localCache: LaunchData['localCache']
 }
 
 export default function FlightListFilters({setLaunchData, localCache}: Props) {
@@ -14,9 +13,9 @@ export default function FlightListFilters({setLaunchData, localCache}: Props) {
     filterLaunches();
   },[launch])
 
-  function filterLaunches () {
+  function filterLaunches () :void {
     const filteredData = localCache?.filter(
-      item =>item.mission_name.toLowerCase().includes(launch.toLowerCase())
+      (item: Launch) =>item.mission_name.toLowerCase().includes(launch.toLowerCase())
     );
 
     setLaunchData(filteredData);
