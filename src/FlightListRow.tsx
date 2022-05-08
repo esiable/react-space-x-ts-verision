@@ -6,7 +6,7 @@ type Props = {
 };
 
 export default function LaunchRow({ launch }: Props) {
-  console.log(launch);
+
   return (
     <tr key={launch.flight_number}>
       <td>
